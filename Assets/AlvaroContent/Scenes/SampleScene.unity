@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 1218627728}
   m_Layer: 0
   m_Name: PlayerCharacter
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -421,7 +421,7 @@ Transform:
   m_GameObject: {fileID: 1218627727}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.26, y: 1.32, z: 5.13924}
+  m_LocalPosition: {x: 0.26, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -438,6 +438,7 @@ GameObject:
   - component: {fileID: 1966702019}
   - component: {fileID: 1966702018}
   - component: {fileID: 1966702017}
+  - component: {fileID: 1966702020}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -462,7 +463,7 @@ Camera:
   m_GameObject: {fileID: 1966702016}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -488,7 +489,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10.283554
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -512,13 +513,28 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1966702016}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.5200001, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1966702020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1966702016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e50eab927a686a4c8b63662ea9fdb8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTag: Player
+  cameraOffset: 2
+  cameraOffsetSmothing: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -40,7 +40,7 @@ public class CarMovmentScript : MonoBehaviour
     {
         SlowDownCar();
         MovementFunction();
-        Debug.Log(bSlowingDownCar);
+        //Debug.Log(bSlowingDownCar);
     }
     void FixedUpdate()
     {
@@ -129,8 +129,10 @@ public class CarMovmentScript : MonoBehaviour
             bSlowingDownCar = false;
         
         }
+    }
 
-
-       
+    public float GetHorizontalAxisValue()
+    {
+        return horizontalAxisValue;
     }
 }
