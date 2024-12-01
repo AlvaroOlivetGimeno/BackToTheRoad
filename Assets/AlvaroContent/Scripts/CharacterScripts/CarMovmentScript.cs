@@ -12,8 +12,11 @@ public class CarMovmentScript : MonoBehaviour
     
     [Range(1.0f, 25.0f)]
     public float carVelocity = 0.0f;
+    [Range(1.0f, 25.0f)]
+    public float carReverseVelocity = 0.0f;
     float currentCarVelocity = 0.0f;
-
+    
+    
     [Range(0.1f, 5.0f)]
     public float carAcceleration = 0.0f;
 
@@ -54,13 +57,15 @@ public class CarMovmentScript : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.D) | Input.GetKey(KeyCode.RightArrow))
             {
+               
+
                 if (horizontalAxisValue == 0)
                 {
                     horizontalAxisValue = 1;
                 }
                 else if (horizontalAxisValue == 1)
                 {
-                    Acceleration();
+                    Acceleration(false);
                 }
                 else
                 {
@@ -69,13 +74,14 @@ public class CarMovmentScript : MonoBehaviour
             }
             else if (Input.GetKey(KeyCode.A) | Input.GetKey(KeyCode.RightArrow))
             {
+               
                 if (horizontalAxisValue == 0)
                 {
                     horizontalAxisValue = -1;
                 }
                 else if (horizontalAxisValue == -1)
                 {
-                    Acceleration();
+                    Acceleration(true);
                 }
                 else
                 {
@@ -89,14 +95,27 @@ public class CarMovmentScript : MonoBehaviour
         }
     }
 
-    public void Acceleration()
+    public void Acceleration(bool reverse)
     {
-        currentCarVelocity += (slowDownCarForce / 100);
-
-        if (currentCarVelocity>=carVelocity)
+        if(!reverse)
         {
-            currentCarVelocity = carVelocity;
+            currentCarVelocity += (slowDownCarForce / 100);
+
+            if (currentCarVelocity >= carVelocity)
+            {
+                currentCarVelocity = carVelocity;
+            }
         }
+        else
+        {
+            currentCarVelocity += (slowDownCarForce / 100);
+
+            if (currentCarVelocity >= carReverseVelocity)
+            {
+                currentCarVelocity = carReverseVelocity;
+            }
+        }
+        
     }
 
     public void DesAcceleration()

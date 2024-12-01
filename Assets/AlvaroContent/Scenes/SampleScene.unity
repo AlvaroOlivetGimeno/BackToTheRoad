@@ -246,7 +246,7 @@ Transform:
   m_GameObject: {fileID: 1204703130}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.1548183, y: -3.5991235, z: 0}
+  m_LocalPosition: {x: 81.9, y: -3.5991235, z: 0}
   m_LocalScale: {x: 200, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -285,6 +285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carVelocity: 25
+  carReverseVelocity: 5
   carAcceleration: 2.14
   carDesAcceleration: 3
   slowDownCarForce: 10
@@ -533,8 +534,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTag: Player
-  cameraOffset: 2
-  cameraOffsetSmothing: 1
+  cameraOffset: 10
+  cameraOffsetSmothing: 5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

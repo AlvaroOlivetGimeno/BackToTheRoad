@@ -13,8 +13,10 @@ public class CameraMovmentScript : MonoBehaviour
     GameObject playerCharacter = null;
 
     [Header("Camera Movment Variables:")]
+    [Range(0.1f, 10f)]
     public float cameraOffset = 0.0f;
     float currentCameraOffset = 0.0f;
+    [Range(0.1f, 5f)]
     public float cameraOffsetSmothing = 0.0f;
 
 
