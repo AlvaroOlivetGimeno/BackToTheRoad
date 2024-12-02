@@ -56,7 +56,7 @@ public class CameraMovmentScript : MonoBehaviour
                     currentCameraOffset = 0;
                 }
             }
-            Debug.Log(currentCameraOffset);
+           // Debug.Log(currentCameraOffset);
 
             
 
