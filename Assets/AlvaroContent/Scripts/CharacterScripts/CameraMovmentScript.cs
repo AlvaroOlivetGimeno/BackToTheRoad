@@ -16,7 +16,7 @@ public class CameraMovmentScript : MonoBehaviour
     [Range(0.1f, 10f)]
     public float cameraOffset = 0.0f;
     float currentCameraOffset = 0.0f;
-    [Range(0.1f, 5f)]
+    [Range(0.1f, 2f)]
     public float cameraOffsetSmothing = 0.0f;
 
 

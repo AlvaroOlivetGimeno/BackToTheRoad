@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
 public class ParallaxScript : MonoBehaviour
 {
@@ -11,42 +12,38 @@ public class ParallaxScript : MonoBehaviour
     [Range(1f, 0f)]
     public float layerVelocity = 0.0f;
 
-    float spriteLenght = 0.0f;
-    float currentPosition = 0.0f;
+    [Header("CAMERA OBJECT:")]
+    public GameObject mainCamera;
 
 
-   [Header("CAMERA OBJECT:")]
-    public GameObject mainCamera; 
 
-    
-    private SpriteRenderer sRenderer;
-
+   
+    private float spriteLenght = 0.0f;
+    private float currentPosition = 0.0f;
     private float startPosition = 0.0f;
-
-
+    private SpriteRenderer sRenderer;
 
     void Start()
     {
-        sRenderer = gameObject.GetComponent<SpriteRenderer>();
-
         InitParallaxLayer();
-
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        LayerMovement();
+       
         SetSpritePosition();
     }
 
     public void InitParallaxLayer()
     {
-        if(sRenderer != null)
+        sRenderer = gameObject.GetComponent<SpriteRenderer>();
+
+        if (sRenderer != null)
         {
             sRenderer.sortingOrder = layerOrder;
-            startPosition = mainCamera.transform.position.x;
+            startPosition = this.transform.position.x;
             spriteLenght = sRenderer.bounds.size.x;
         }
     }
@@ -70,10 +67,32 @@ public class ParallaxScript : MonoBehaviour
         if(currentPosition> startPosition+spriteLenght)
         {
             startPosition += spriteLenght;
+            SpawnParallax();
+           
+
         }
         else if(currentPosition < startPosition - spriteLenght)
         {
             startPosition -= spriteLenght;
+            SpawnParallax();
+        }
+        else
+        {
+            LayerMovement();
         }
     }
+
+    public void SpawnParallax()
+    {
+
+        GameObject newParallax = Instantiate(this.gameObject, new Vector3(startPosition, transform.position.y, transform.position.z), transform.rotation);
+        newParallax.GetComponent<ParallaxScript>().mainCamera = mainCamera;
+        Invoke("DestroyMyself", 1.5f);
+    }
+
+    public void DestroyMyself()
+    {
+        Destroy(this.gameObject);
+    }
+
 }
