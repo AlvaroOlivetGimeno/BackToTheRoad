@@ -102,6 +102,7 @@ MonoBehaviour:
   layerOrder: -10
   layerVelocity: 1
   mainCamera: {fileID: 0}
+  Cloud: {fileID: 8754238135716882906, guid: b3598fbd7aa1d754c9cbd47eb1cbf309, type: 3}
 --- !u!1 &4683705779234757772
 GameObject:
   m_ObjectHideFlags: 0

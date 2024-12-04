@@ -15,9 +15,13 @@ public class ParallaxScript : MonoBehaviour
     [Header("CAMERA OBJECT:")]
     public GameObject mainCamera;
 
+    [Header("CLOUDS FOR LAYERS:")]
+    public GameObject Cloud;
+    [Range(1f, 100f)]
+    public int probabilityOfClouds = 0;
 
 
-   
+
     private float spriteLenght = 0.0f;
     private float currentPosition = 0.0f;
     private float startPosition = 0.0f;
@@ -87,12 +91,26 @@ public class ParallaxScript : MonoBehaviour
 
         GameObject newParallax = Instantiate(this.gameObject, new Vector3(startPosition, transform.position.y, transform.position.z), transform.rotation);
         newParallax.GetComponent<ParallaxScript>().mainCamera = mainCamera;
+
+        SpawnCloudInLayer();
+        
+    
         Invoke("DestroyMyself", 1.5f);
     }
 
     public void DestroyMyself()
     {
         Destroy(this.gameObject);
+    }
+
+    public void SpawnCloudInLayer()
+    {
+        int cloudRandomProbability = Random.Range(0, 100);
+
+        if (cloudRandomProbability <= probabilityOfClouds)
+        {
+            GameObject newCloud = Instantiate(Cloud, new Vector3(startPosition + 150, Random.Range(5.0f, 10.0f), transform.position.z), transform.rotation);
+        }
     }
 
 }

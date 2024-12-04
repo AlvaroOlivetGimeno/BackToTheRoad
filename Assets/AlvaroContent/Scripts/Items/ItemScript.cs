@@ -8,7 +8,7 @@ public class ItemScript : MonoBehaviour
     [Header("ITEM DATA:")]
     public ItemData ItemData;
 
-    private SpriteRenderer spriteRenderer;
+     SpriteRenderer spriteRenderer;
     private CircleCollider2D circleCollider;
 
     

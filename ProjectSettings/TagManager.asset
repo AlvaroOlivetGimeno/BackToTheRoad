@@ -8,6 +8,7 @@ TagManager:
   - InventorySlot
   - HUD
   - InventorySlotImage
+  - CloudFolder
   layers:
   - Default
   - TransparentFX

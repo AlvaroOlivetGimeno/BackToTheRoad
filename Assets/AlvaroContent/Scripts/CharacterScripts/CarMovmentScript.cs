@@ -9,7 +9,6 @@ public class CarMovmentScript : MonoBehaviour
     private Rigidbody2D rigidBody2D;
 
     [Header("CAR VARIABLES:")]
-    
     [Range(1.0f, 25.0f)]
     public float carVelocity = 0.0f;
    
