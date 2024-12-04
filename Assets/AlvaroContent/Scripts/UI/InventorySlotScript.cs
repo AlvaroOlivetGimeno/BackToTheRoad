@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NewBehaviourScript : MonoBehaviour
+public class InventorySlotScript : MonoBehaviour
 {
     // Start is called before the first frame update
     
@@ -41,19 +41,19 @@ public class NewBehaviourScript : MonoBehaviour
         {
             case ItemsType.Cookie:
                 transform.GetComponentInParent<InventoryGameScript>().ConsumeCookie();
-                inventoryText.GetComponent<TextMeshProUGUI>().text = transform.GetComponentInParent<InventoryGameScript>().currentCookies.ToString();
+                InitInventorySlot();
                 break;
             case ItemsType.Water:
                 transform.GetComponentInParent<InventoryGameScript>().ConsumeWater();
-                inventoryText.GetComponent<TextMeshProUGUI>().text = transform.GetComponentInParent<InventoryGameScript>().currentWaters.ToString();
+                InitInventorySlot();
                 break;
             case ItemsType.Medicine:
                 transform.GetComponentInParent<InventoryGameScript>().ConsumeMedicine();
-                inventoryText.GetComponent<TextMeshProUGUI>().text = transform.GetComponentInParent<InventoryGameScript>().currentMedicines.ToString();
+                InitInventorySlot();
                 break;
             case ItemsType.Gasoline:
                 transform.GetComponentInParent<InventoryGameScript>().ConsumeGasoline();
-                inventoryText.GetComponent<TextMeshProUGUI>().text = transform.GetComponentInParent<InventoryGameScript>().currentGasolines.ToString();
+                InitInventorySlot();
                 break;
         }
 

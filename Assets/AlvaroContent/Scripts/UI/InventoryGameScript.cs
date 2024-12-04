@@ -94,7 +94,6 @@ public class InventoryGameScript : MonoBehaviour
         }
         else
         {
-            
             feedbackText.GetComponent<FeedbackTextScript>().SetFeedbackText("There's NO more water");
         }
     }
@@ -137,4 +136,45 @@ public class InventoryGameScript : MonoBehaviour
         }
     }
 
+    public void UpdateInventoryHUD()
+    {
+        foreach (var slot in inventorySlotsArray)
+        {
+           slot.GetComponent<InventorySlotScript>().InitInventorySlot();
+        }
+    }
+
+    public void AddItemToInventory(string itemName)
+    {
+        if (itemName == "Cookie")
+        {
+            currentCookies += 1;
+            UpdateInventoryHUD();
+            feedbackText.GetComponent<FeedbackTextScript>().SetFeedbackText("+1 " + itemName);
+        }
+        else if (itemName == "Water")
+        {
+            currentWaters += 1;
+            UpdateInventoryHUD();
+            feedbackText.GetComponent<FeedbackTextScript>().SetFeedbackText("+1 " + itemName);
+        }
+        else if (itemName == "Medicine")
+        {
+            currentMedicines += 1;
+            UpdateInventoryHUD();
+            feedbackText.GetComponent<FeedbackTextScript>().SetFeedbackText("+1 " + itemName);
+
+        }
+        else if (itemName == "Gasoline")
+        {
+            currentGasolines += 1;
+            UpdateInventoryHUD();
+            feedbackText.GetComponent<FeedbackTextScript>().SetFeedbackText("+1 " + itemName);
+        }
+        else
+        {
+            Debug.LogError("PROBLEM WITH 'NAME' IN THE MOMENT ON ASSING ITEM");
+        }
+            
+    }
 }

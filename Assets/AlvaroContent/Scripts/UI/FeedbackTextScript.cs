@@ -27,8 +27,6 @@ public class FeedbackTextScript : MonoBehaviour
         if(activeFeedbackText)
         {
             currentFeedbackMessageTime += 0.01f;
-           
-          
 
             if(currentFeedbackMessageTime > (feedbackMessageTime*10) )
             {
@@ -47,7 +45,7 @@ public class FeedbackTextScript : MonoBehaviour
 
     public void DesactiveFeedbackText()
     {
-        Debug.Log("dESACTIVANDO");
+       // Debug.Log("dESACTIVANDO");
         currentFeedbackMessageTime = 0.1f;
         activeFeedbackText = false;
         this.gameObject.SetActive(false);
