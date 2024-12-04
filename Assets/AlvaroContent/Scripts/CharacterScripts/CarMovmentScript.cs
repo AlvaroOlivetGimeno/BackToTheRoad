@@ -5,13 +5,14 @@ using UnityEngine;
 
 public class CarMovmentScript : MonoBehaviour
 {
-    [Header("Game Object Attributes")]
+    
     private Rigidbody2D rigidBody2D;
 
-    [Header("Movement Attributes")]
+    [Header("CAR VARIABLES:")]
     
     [Range(1.0f, 25.0f)]
     public float carVelocity = 0.0f;
+   
     [Range(1.0f, 25.0f)]
     public float carReverseVelocity = 0.0f;
     float currentCarVelocity = 0.0f;
@@ -25,8 +26,8 @@ public class CarMovmentScript : MonoBehaviour
 
     [Range(1.0f, 25.0f)]
     public float slowDownCarForce = 0.0f;
+   
     bool bSlowingDownCar = false;
-
 
     float horizontalAxisValue = 0.0f;
 
@@ -114,8 +115,7 @@ public class CarMovmentScript : MonoBehaviour
             {
                 currentCarVelocity = carReverseVelocity;
             }
-        }
-        
+        }   
     }
 
     public void DesAcceleration()
@@ -154,4 +154,5 @@ public class CarMovmentScript : MonoBehaviour
     {
         return horizontalAxisValue;
     }
+
 }

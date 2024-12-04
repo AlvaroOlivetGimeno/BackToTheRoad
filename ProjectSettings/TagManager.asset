@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - ParallaxEmptyObject
+  - InventorySlot
+  - HUD
+  - InventorySlotImage
   layers:
   - Default
   - TransparentFX
